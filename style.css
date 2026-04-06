@@ -1,0 +1,486 @@
+/* ===== Google Fonts - Italianno ===== */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+/* Added Quicksand for the location plan */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600;700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(255, 248, 240, 0.85), rgba(255, 248, 240, 0.85)),
+        url("images/campsite-bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 200, 150, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 180, 120, 0.15), transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(107, 79, 60, 0.95); /* slightly transparent */
+    backdrop-filter: blur(8px); /* blur effect for modern look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.topbar:hover {
+    background: rgba(90, 62, 47, 0.95);
+}
+
+.topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+    transition: color 0.2s;
+}
+
+.brand:hover {
+    color: #e67e22;
+}
+
+.brand-text {
+    font-family: 'Italianno', cursive;
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: normal;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #e67e22;
+    transition: width 0.2s;
+}
+
+.nav a:hover {
+    color: #e67e22;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.book-btn,
+.dashboard-btn,
+.logout-btn,
+.btn-primary,
+.btn-success,
+.btn-outline-primary,
+.btn-outline-success {
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border-radius: 40px;
+    padding: 8px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.book-btn {
+    padding: 10px 35px !important;
+}
+
+.book-btn,
+.dashboard-btn,
+.logout-btn,
+.btn-primary,
+.btn-success {
+    background-color: #A67B5B !important;
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(166, 123, 91, 0.3) !important;
+}
+
+.book-btn:hover,
+.dashboard-btn:hover,
+.logout-btn:hover,
+.btn-primary:hover,
+.btn-success:hover {
+    background-color: #8B5E3C !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(166, 123, 91, 0.4) !important;
+}
+
+.btn-outline-primary,
+.btn-outline-success {
+    background-color: transparent !important;
+    border: 2px solid #A67B5B !important;
+    color: #A67B5B !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-success:hover {
+    background-color: #A67B5B !important;
+    color: white !important;
+}
+
+.auth-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-greeting {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #ecf0f1;
+    font-weight: 500;
+    margin-right: 5px;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    font-size: 0.95rem;
+}
+
+.user-greeting i {
+    color: #e67e22;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .topbar-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+    .right {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .auth-box {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* ===== Sticky Footer ===== */
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: #6B4F3C;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+/* ===== Fireflies Animation ===== */
+.fireflies {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.firefly {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ffd27a;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ffd27a;
+    animation: fly 12s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fly {
+    0% { transform: translateY(100vh) translateX(0); }
+    50% { transform: translateY(40vh) translateX(60px); }
+    100% { transform: translateY(-10vh) translateX(-40px); }
+}
+
+/* ===== Stars ===== */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+/* ===== Campsite Location Plan Styles ===== */
+.location-plan {
+    background-color: #faf0e6;
+    padding: 4rem 0;
+    font-family: 'Quicksand', sans-serif;
+    border-top: 4px solid #e8d9c5;
+    border-bottom: 4px solid #e8d9c5;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #6B4F3C;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    color: #8b7a6b;
+    font-size: 1.1rem;
+}
+
+.facilities-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    background: rgba(255, 250, 240, 0.7);
+    padding: 1.5rem;
+    border-radius: 60px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.facility-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: #5e4b3a;
+}
+
+.facility-item i {
+    font-size: 1.8rem;
+    color: #a67b5b;
+    background: #f5e6d3;
+    padding: 0.8rem;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.facility-item:hover i {
+    background: #e8d9c5;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(166, 123, 91, 0.2);
+}
+
+.facility-item span {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #6B4F3C;
+}
+
+.campsite-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    margin: 2rem 0;
+}
+
+.campsite-card {
+    background: #f5e6d3;
+    border-radius: 28px;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    color: #2c3e4f;
+    box-shadow: 0 8px 18px rgba(107, 79, 60, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.campsite-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 18px 30px rgba(107, 79, 60, 0.15);
+    background: #f0dfcc;
+    border-color: #a67b5b;
+}
+
+.campsite-card h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #6B4F3C;
+    letter-spacing: 0.5px;
+}
+
+.view-details {
+    font-size: 0.9rem;
+    color: #a67b5b;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.campsite-card:hover .view-details {
+    opacity: 1;
+}
+
+.wide-card {
+    grid-column: 1 / -1;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.map-note {
+    color: #8b7a6b;
+    font-style: italic;
+    font-size: 0.95rem;
+    border-top: 1px dashed #dcc9b5;
+    padding-top: 2rem;
+}
+
+.map-note i {
+    color: #a67b5b;
+    margin-right: 0.4rem;
+}
+
+/* Responsive adjustments for location plan */
+@media (max-width: 768px) {
+    .facilities-row {
+        gap: 1.5rem;
+        border-radius: 40px;
+        padding: 1.2rem;
+    }
+
+    .facility-item i {
+        font-size: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .campsite-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .wide-card {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .campsite-card {
+        padding: 1.8rem 1rem;
+    }
+
+    .campsite-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .facilities-row {
+        gap: 1rem;
+        border-radius: 30px;
+        padding: 1rem;
+    }
+
+    .facility-item span {
+        font-size: 0.8rem;
+    }
+
+    .facility-item i {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+    }
+}
